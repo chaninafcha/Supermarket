@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperMS.Domain", "SuperMS.Domain\SuperMS.Domain.csproj", "{98681D95-6439-4CF6-8C6B-D78DA1789C62}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperMS.API", "SuperMS.API\SuperMS.API.csproj", "{BFC775ED-F88B-4142-95E3-DB6E0CAD9CC3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98681D95-6439-4CF6-8C6B-D78DA1789C62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98681D95-6439-4CF6-8C6B-D78DA1789C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98681D95-6439-4CF6-8C6B-D78DA1789C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98681D95-6439-4CF6-8C6B-D78DA1789C62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC775ED-F88B-4142-95E3-DB6E0CAD9CC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC775ED-F88B-4142-95E3-DB6E0CAD9CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC775ED-F88B-4142-95E3-DB6E0CAD9CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC775ED-F88B-4142-95E3-DB6E0CAD9CC3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1FB8E83E-DAD6-4B5D-A513-122733DE8137}
+	EndGlobalSection
+EndGlobal
