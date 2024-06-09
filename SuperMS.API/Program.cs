@@ -11,8 +11,8 @@ var configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
 .Build();
 
-
-builder.Services.AddDbContext<CategoriesContext>(options=>options.UseSqlServer(configuration.GetConnectionString("SQLiteConnection"), b => b.MigrationsAssembly("SuperMS.Domain")));
+var a = configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<CategoriesContext>(options=>options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("SuperMS.Domain")));
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped(typeof(IProductsService),typeof(ProductService));
 builder.Services.AddScoped(typeof(ICategoriesService),typeof(CategoriesService));

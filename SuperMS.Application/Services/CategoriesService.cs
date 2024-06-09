@@ -16,9 +16,9 @@ namespace SuperMS.Domain
 
         public async Task<IEnumerable<CategoriesEntity>> GetCategories()
         {
-            // var result=await _categoriesRepository.GetAllAsync();
-            //  return result;
-            return null;
+            var result = await _categoriesRepository.GetAllAsync();
+            return result;
+   ;
 
         }
 

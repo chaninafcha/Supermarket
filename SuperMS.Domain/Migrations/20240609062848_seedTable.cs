@@ -12,13 +12,13 @@ namespace SuperMS.Domain
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.Sql(@"
-                INSERT INTO categories (name)
+                INSERT INTO categories (id,name)
                 VALUES 
-                    ('מוצרי ניקיון'),
-                    ('גבינות'),
-                    ('ירקות ופירות'),
-                    ('בשר ודגים'),
-                    ('מאפים');
+                    (1,'מוצרי ניקיון'),
+                    (2,'גבינות'),
+                    (3,'ירקות ופירות'),
+                    (4,'בשר ודגים'),
+                    (5,'מאפים');
             ");
         }
 

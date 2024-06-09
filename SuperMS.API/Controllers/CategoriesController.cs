@@ -22,7 +22,7 @@ namespace SuperMS.API.Controllers
         public async Task<ActionResult<CategoriesEntity>> Get()
         {
 
-            var categoriesList = categoriesService.GetCategories();
+            var categoriesList =await categoriesService.GetCategories();
             return Ok(categoriesList);
         }
     }

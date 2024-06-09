@@ -20,9 +20,9 @@ namespace SuperMS.Domain
         public async Task<IEnumerable<ProductDTO>> GetProducts()
         {
            var query=await _productRepository.GetAllAsync();
-           var result= query.GroupBy(x=>x.Categories).Select(x=>new ProductDTO { 
+           var result= query.GroupBy(x=>x.category).Select(x=>new ProductDTO { 
                name=x.Select(x=>x.name).FirstOrDefault(),
-               category=x.Select(x=>x.Categories.id).FirstOrDefault(),
+               category=x.Select(x=>x.category).FirstOrDefault(),
                quantity=x.Where(x=>x.name==x.name).Count(),
            }).Distinct();
 
@@ -31,7 +31,7 @@ namespace SuperMS.Domain
 
         public async Task<IEnumerable<ProductEntity>> GetProductsByCategory(int category)
         {
-            var result = await _productRepository.Queryable().Where(x => x.Categories.id == category).ToListAsync();
+            var result = await _productRepository.Queryable().Where(x => x.category == category).ToListAsync();
             return result;
         }
 
@@ -42,7 +42,7 @@ namespace SuperMS.Domain
 
                 return new ResponseMessage<ProductEntity>(false,"no Data",null);
             }
-            ProductEntity entity = new ProductEntity { name = product.name, Categories = new CategoriesEntity { id = product.id } };
+            ProductEntity entity = new ProductEntity { name = product.name, category = product.id  };
             await _productRepository.AddAsync(entity);
             return new ResponseMessage<ProductEntity>(true,"succses", entity);
         }
