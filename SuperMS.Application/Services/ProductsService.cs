@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Smarti.Services.Interfaces;
 using SuperMS.Application;
+using SuperMS.Application.Models;
 using SuperMS.Application.Repository.Interface;
-using SuperMS.Domain;
 
-namespace Smarti.Services
+
+namespace SuperMS.Domain
 {
-    public class ProductService : Interfaces.ProductService
+    public class ProductService : IProductsService
     {
       
 
@@ -17,9 +17,15 @@ namespace Smarti.Services
         }
 
 
-        public async Task<IEnumerable<ProductEntity>> GetProducts()
+        public async Task<IEnumerable<ProductDTO>> GetProducts()
         {
-           var result=await _productRepository.GetAllAsync();
+           var query=await _productRepository.GetAllAsync();
+           var result= query.GroupBy(x=>x.Categories).Select(x=>new ProductDTO { 
+               name=x.Select(x=>x.name).FirstOrDefault(),
+               category=x.Select(x=>x.Categories.id).FirstOrDefault(),
+               quantity=x.Where(x=>x.name==x.name).Count(),
+           }).Distinct();
+
             return result;
         }
 
@@ -29,16 +35,16 @@ namespace Smarti.Services
             return result;
         }
 
-        public async Task<ResponseMessage<ProductEntity>>AddProducts(ProductEntity product)
+        public async Task<ResponseMessage<ProductEntity>>AddProducts(ProductDTO product)
         {
             if(product == null)
             {
 
                 return new ResponseMessage<ProductEntity>(false,"no Data",null);
             }
-
-            await _productRepository.AddAsync(product);
-            return new ResponseMessage<ProductEntity>(true,"succses", product);
+            ProductEntity entity = new ProductEntity { name = product.name, Categories = new CategoriesEntity { id = product.id } };
+            await _productRepository.AddAsync(entity);
+            return new ResponseMessage<ProductEntity>(true,"succses", entity);
         }
 
 

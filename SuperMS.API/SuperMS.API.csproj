@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SuperMS.Application\SuperMS.Application.csproj" />
     <ProjectReference Include="..\SuperMS.Domain\SuperMS.Domain.csproj" />
   </ItemGroup>
 

@@ -7,10 +7,10 @@ namespace SuperMS.Domain
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
         public string name { get; set; }
-        public int quantity { get; set; }
+        public int category { get;set; }
 
 
-        public virtual CategoriesEntity  Categories { get; set; }
+        public virtual CategoriesEntity categoryNavigation { get; set; } = null!;
 
 
     }

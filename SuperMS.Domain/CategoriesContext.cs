@@ -9,9 +9,9 @@ namespace SuperMS.Domain
                 
         }
         public CategoriesContext(DbContextOptions<CategoriesContext> options):base(options) { }
-        
-        public virtual DbSet<ProductEntity> products { get; set; }
-        public virtual DbSet<CategoriesEntity> categories { get; set; }
+
+        public virtual DbSet<ProductEntity> products { get; set; } = null!;
+        public virtual DbSet<CategoriesEntity> categories { get; set; } = null!;
 
         public void SeedData()
         {

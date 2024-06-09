@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Smarti.Controllers;
 using SuperMS.Domain;
 
 namespace SuperMS.API.Controllers
@@ -10,20 +9,21 @@ namespace SuperMS.API.Controllers
     public class CategoriesController : ControllerBase
     {
         private readonly ILogger<CategoriesController> _logger;
-        // private IGeneralServices generalServices;
+        private ICategoriesService categoriesService;
 
-        public CategoriesController(ILogger<CategoriesController> logger/*, IGeneralServices _generalServices*/)
+        public CategoriesController(ILogger<CategoriesController> logger, ICategoriesService _categoriesService)
         {
             _logger = logger;
-            //generalServices = _generalServices;
+            categoriesService = _categoriesService;
+
         }
 
         [HttpGet(Name = "GetCategories")]
         public async Task<ActionResult<CategoriesEntity>> Get()
         {
 
-            // var person = generalServices.SetProperties<PersonEntity>();
-            return null;
+            var categoriesList = categoriesService.GetCategories();
+            return Ok(categoriesList);
         }
     }
 }

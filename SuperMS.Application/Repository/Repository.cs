@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SuperMS.Application.Repository.Interface;
 using SuperMS.Domain;
 
 namespace SuperMS.Application.Repository
@@ -8,10 +9,10 @@ namespace SuperMS.Application.Repository
         private readonly CategoriesContext _context;
         private readonly DbSet<T> _dbSet;
 
-        public Repository(CategoriesContext context, DbSet<T> dbSet)
+        public Repository(CategoriesContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
-            _dbSet = dbSet ?? throw new ArgumentNullException(nameof(dbSet));
+            _dbSet = context.Set<T>();
         }
 
         public IQueryable<T> Queryable() => _dbSet;
