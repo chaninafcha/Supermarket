@@ -15,14 +15,14 @@ var configuration = new ConfigurationBuilder()
 .Build();
 
 
-builder.Services.AddDbContext<CategoriesContext>(options=>options.UseSqlite(configuration.GetConnectionString("SQLiteConnection"), b => b.MigrationsAssembly("SuperMS.API")));
+builder.Services.AddDbContext<CategoriesContext>(options=>options.UseSqlite(configuration.GetConnectionString("SQLiteConnection"), b => b.MigrationsAssembly("SuperMS.Domain")));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //builder.Services.AddScoped<ID2Service, D2Service>();
-builder.Services.AddScoped<IWebIntService, WebIntService>();
+builder.Services.AddScoped<IWebIntService, CategoriesService>();
 //builder.Services.AddScoped<IGeneralServices, GeneralServices>();
 
 

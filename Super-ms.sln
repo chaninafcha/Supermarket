@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperMS.Domain", "SuperMS.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperMS.API", "SuperMS.API\SuperMS.API.csproj", "{BFC775ED-F88B-4142-95E3-DB6E0CAD9CC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperMS.Application", "SuperMS.Application\SuperMS.Application.csproj", "{955CF6EE-AF6C-46F5-B869-F6461A99C901}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BFC775ED-F88B-4142-95E3-DB6E0CAD9CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFC775ED-F88B-4142-95E3-DB6E0CAD9CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFC775ED-F88B-4142-95E3-DB6E0CAD9CC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{955CF6EE-AF6C-46F5-B869-F6461A99C901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{955CF6EE-AF6C-46F5-B869-F6461A99C901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{955CF6EE-AF6C-46F5-B869-F6461A99C901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{955CF6EE-AF6C-46F5-B869-F6461A99C901}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
